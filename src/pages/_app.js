@@ -11,7 +11,8 @@ const theme = {
     disabledElement: '#23A6F0',
     alert: '#E77C40',
     textLight: '#FFFFFF',
-    backgroundLight: '#FFFFFF'
+    backgroundLight: '#FFFFFF',
+    backgroundDark: '#252B42'
   },
 }
 

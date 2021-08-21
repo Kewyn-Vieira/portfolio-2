@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Button from '../components/buttons/Button'
 import ButtonPrimary from '../components/buttons/ButtonPrimary'
 import ButtonSecondary from '../components/buttons/ButtonSecondary'
 import layout from '../components/layout'
@@ -26,6 +27,7 @@ import user3 from '../../public/index/images/user3.jpg'
 let TextBox = styled.div`
     width: 60%;
     margin: 32px 0;
+    color: ${({color}) => color}
 `
 
 let StyledP = styled.p`
@@ -210,6 +212,16 @@ let StyledUl = styled.ul`
     list-style: none;
 `
 
+let StyledInput = styled.input`
+    height: 100%;
+    padding: 0 0 0 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+`
+
 export default function Home() {
     return (
         <div>
@@ -357,7 +369,7 @@ export default function Home() {
             <Section>
                 <Container>
                     <TextBox>
-                        <StyledH2>Princing</StyledH2>
+                        <StyledH2>Pricing</StyledH2>
                         <StyledP>Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </StyledP>
                     </TextBox>
                     <Row>
@@ -367,23 +379,23 @@ export default function Home() {
                     </Row>
                 </Container>
             </Section>
-            <Section>
-                <Container>
+            <Section backgroundColor={({theme}) => theme.colors.backgroundDark}>
+                <Container padding='32px 0'>
                     <Row>
-                        <TextBox>
-                            <StyledH2>Get In Touch</StyledH2>
-                            <StyledP>The gradual accumulation of information about atomic and small-scale behaviour during the first quarter of the 20th </StyledP>
+                        <TextBox color={({theme}) => theme.colors.textLight}>
+                            <StyledH2 color={({theme}) => theme.colors.textLight} textAlign='left'>Get In Touch</StyledH2>
+                            <StyledP textAlign='left' width='256px'>The gradual accumulation of information about atomic and small-scale behaviour during the first quarter of the 20th </StyledP>
                         </TextBox>
-                        <div>
-                            <input placeholder='Your Email'></input>
-                            <ButtonPrimary>Subscribe</ButtonPrimary>
+                        <div style={{height: '58px', margin: 'auto'}}>
+                            <StyledInput placeholder='Your Email'></StyledInput>
+                            <Button backgroundColor={({theme}) => theme.colors.primary} height='100%' padding='15px 25px' borderColor='#E5E5E5' borderRadius='0 5px 5px 0' fontWeight='400'>Subscribe</Button>
                         </div>
                     </Row>
                 </Container>
             </Section>
             <footer>
                 <Section>
-                    <Container padding='16px 0'>
+                    <Container padding='32px 0'>
                         <Row justifyContent='flex-start'>
                             <Column alignItems='flex-start' margin='0 32px 0 0'>
                                 <StyledH3>Get In Touch</StyledH3>
@@ -428,7 +440,6 @@ export default function Home() {
                                 <ASecondary>API</ASecondary>
                             </Column>
                         </Row>
-
                     </Container>
                 </Section>
             </footer>
