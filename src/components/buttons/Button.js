@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export default styled.button`
-    width: ${(props) => props.width};
-    height: ${(props) => props.height};
-    margin: ${(props) => props.margin};
+    width: ${({width}) => width};
+    height: ${({height}) => height};
+    margin: ${({margin}) => margin};
     border-width: 1px;
     border-style: solid;
     font-size: ${({fontSize}) => fontSize ? fontSize : '14px'};
     font-weight: ${({fontWeight}) => fontWeight ? fontWeight : '700'};
     cursor: pointer;
-    border-color: ${(props) => props.borderColor};
-    background-color: ${(props) => props.backgroundColor};
-    color: ${(props) => props.color ? props.color : props.theme.colors.textLight};
+    border-color: ${({borderColor}) => borderColor};
+    background-color: ${({backgroundColor}) => backgroundColor};
+    color: ${({color, theme}) => color ? color : theme.colors.textLight};
 
-    padding: ${(props) => props.padding};
-    border-radius: ${(props) => props.borderRadius};
+    padding: ${({padding}) => padding};
+    border-radius: ${({borderRadius}) => borderRadius};
 `

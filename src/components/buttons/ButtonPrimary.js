@@ -1,19 +1,19 @@
 import Button from './Button'
 
-export default function ButtonPrimary(props)
+export default function ButtonPrimary({children, width, margin, borderColor, color, backgroundColor})
 {
     return (
         <Button
-            width={props.width}
-            margin={props.margin}
-            borderColor={({theme}) => props.borderColor ? props.borderColor : theme.colors.primary}
-            color={props.color} 
-            backgroundColor={({theme}) => props.backgroundColor ? props.backgroundColor : theme.colors.primary}
+            width={width}
+            margin={margin}
+            borderColor={({theme}) => borderColor ? borderColor : theme.colors.primary}
+            color={color} 
+            backgroundColor={({theme}) => backgroundColor ? backgroundColor : theme.colors.primary}
 
             padding='15px 36px'
             borderRadius='37px'
         >
-            {props.children}
+            {children}
         </Button>
     )
 }

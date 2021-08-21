@@ -36,13 +36,13 @@ let StyledP = styled.p`
     text-align: ${({textAlign}) => textAlign ? textAlign : 'center'};
     margin: ${({margin}) => margin};
     font-family: Montserrat;
-    font-size: ${(props) => props.fontSize ? props.fontSize : '14px'};
+    font-size: ${({fontSize}) => fontSize ? fontSize : '14px'};
     font-weight: ${({fontWeight}) => fontWeight};
     color: ${({color}) => color};
 `
 
 let APrimary = styled.a`
-    color: ${(props) => props.color ? props.color : props.theme.colors.primary};
+    color: ${({color, theme}) => color ? color : theme.colors.primary};
     text-decoration: none;
     font-weight: ${({fontWeight}) => fontWeight};
     font-size: ${({fontSize}) => fontSize};
@@ -50,7 +50,7 @@ let APrimary = styled.a`
 `
 
 let ASecondary = styled.a`
-color: ${(props) => props.color ? props.color : props.theme.colors.textSecondary};
+color: ${({color, theme}) => color ? color : theme.colors.textSecondary};
 text-decoration: none;
 font-weight: ${({fontWeight}) => fontWeight ? fontWeight : '600'};
 font-size: ${({fontSize}) => fontSize ? fontSize : '14px'};
@@ -207,8 +207,8 @@ let StyledUl = styled.ul`
     height: ${({height}) => height};
     display: flex;
     flex-wrap: ${({flexWrap}) => flexWrap ? flexWrap : 'wrap'};
-    justify-content: ${(props) => props.justifyContent ? props.justifyContent : 'space-between'};
-    align-items: ${(props) => props.alignItems ? props.alignItems : 'space-evenly'};
+    justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'space-between'};
+    align-items: ${({alignItems}) => alignItems ? alignItems : 'space-evenly'};
     list-style: none;
 `
 

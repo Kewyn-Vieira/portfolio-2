@@ -6,12 +6,12 @@ let StyledDiv = styled.div`
     display: flex;
     justify-content: center;
     
-    background-color: ${(props) => props.backgroundColor}
+    background-color: ${({backgroundColor}) => backgroundColor}
 `
 
-export default function Section(props)
+export default function Section({children, backgroundColor})
 {
     return (
-        <StyledDiv backgroundColor={props.backgroundColor}>{props.children}</StyledDiv>
+        <StyledDiv backgroundColor={backgroundColor}>{children}</StyledDiv>
     )
 }

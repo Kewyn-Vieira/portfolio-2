@@ -6,7 +6,7 @@ let StyledDiv = styled.div`
     padding: ${({padding}) => padding};
     display: flex;
     flex-direction: column;
-    align-items: ${(props) => props.alignItems ? props.alignItems : 'center'};
+    align-items: ${({alignItems}) => alignItems ? alignItems : 'center'};
     justify-content: ${({justifyContent}) => justifyContent};
     position: ${({position}) => position};
     color: ${({color}) => color}

@@ -5,8 +5,8 @@ let StyledDiv = styled.div`
     height: ${({height}) => height};
     display: flex;
     flex-wrap: ${({flexWrap}) => flexWrap ? flexWrap : 'wrap'};
-    justify-content: ${(props) => props.justifyContent ? props.justifyContent : 'space-evenly'};
-    align-items: ${(props) => props.alignItems ? props.alignItems : 'space-evenly'};
+    justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'space-evenly'};
+    align-items: ${({alignItems}) => alignItems ? alignItems : 'space-evenly'};
 `
 
 export default function Row({children, width, justifyContent, alignItems, height, flexWrap})
