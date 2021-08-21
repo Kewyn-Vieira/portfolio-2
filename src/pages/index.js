@@ -23,9 +23,10 @@ import post4 from '../../public/index/images/post4.png'
 import user1 from '../../public/index/images/user1.jpg'
 import user2 from '../../public/index/images/user2.jpg'
 import user3 from '../../public/index/images/user3.jpg'
+import phone from '../../public/index/images/phone.png'
 
 let TextBox = styled.div`
-    width: 60%;
+    width: ${({width}) => width ? width : '60%'};
     margin: 32px 0;
     color: ${({color}) => color}
 `
@@ -225,7 +226,7 @@ let StyledInput = styled.input`
 export default function Home() {
     return (
         <div>
-            <header>
+            <header style={{marginBottom: '64px'}}>
                 <Section>
                     <Container padding='16px 0'>
                         <Row justifyContent='space-between' alignItems='center' flexWrap='nowrap'>
@@ -270,12 +271,19 @@ export default function Home() {
                 </Section>
             </header>
             <Section>
-                <Container>
-                    <Row>
-                        <Column>
-                            <TextBox>
-                                <StyledH1>Your Financial Assistance</StyledH1>
-                                <StyledP fontSize='20px'>We know how large objects will act, but things on a small scale.</StyledP>
+                <Container position='relative'>
+                    <div style={{overflow: 'hidden', position: 'absolute', top: '-10%', left: '-256px', transform:'rotate(128.37deg)'}}>
+                        <ColorWrapper color={({theme}) => theme.colors.disabledElement}>
+                            <svg width="246" height="282" viewBox="0 0 246 282" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M156.475 0.486519C198.807 2.91727 234.975 29.0799 242.967 79.134C252.164 136.734 238.879 204.548 195.185 242.915C145.227 286.782 81.6478 296.653 41.2262 256.278C-1.11394 213.987 -12.5897 134.793 18.3005 66.2331C45.2585 6.40079 105.562 -2.43705 156.475 0.486519Z" fill="currentColor"/>
+                            </svg>
+                        </ColorWrapper>
+                    </div>
+                    <Row justifyContent='space-between'>
+                        <Column width='50%' alignItems='flex-start'>
+                            <TextBox width='100%'>
+                                <StyledH1 textAlign='left' fontSize='58px' color={({theme}) => theme.colors.textDark}>Your Financial Assistance</StyledH1>
+                                <StyledP textAlign='left' fontSize='20px'>We know how large objects will act, but things on a small scale.</StyledP>
                             </TextBox>
                             <div>
                                 <ButtonPrimary margin='0 16px 0 0'>
@@ -286,10 +294,23 @@ export default function Home() {
                                 </ButtonPrimary>
                             </div>
                         </Column>
-                        <Column>
-                            <img></img>
-                            <p>imgs</p>
-                        </Column>
+                        <div style={{width: '50%'}}>
+                            <div style={{width: 'inherit', overflow: 'hidden', position: 'absolute', top: '20%', transform: 'rotate(12.49deg)'}}>
+                                <ColorWrapper color={({theme}) => theme.colors.primary}>
+                                    <svg width="100%" height="auto" viewBox="0 0 508 498" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M245.511 0.232318C350.833 -1.17472 463.858 38.9641 497.86 149.252C532.855 262.758 472.546 380.13 383.765 448.66C300.64 512.825 191.103 515.1 108.351 449.918C23.3647 382.977 -21.3897 264.852 11.8897 155.745C44.0092 50.4398 144.916 1.57623 245.511 0.232318Z"/>
+                                    </svg>
+                                </ColorWrapper>
+                            </div>
+                            <div style={{width: 'inherit', overflow: 'hidden', position: 'absolute', top: '20%', transform:'rotate(64.17deg)'}}>
+                                <ColorWrapper color={({theme}) => theme.colors.disabledElement}>
+                                    <svg width="100%" height="auto" viewBox="0 0 487 522" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.35" fill-rule="evenodd" clip-rule="evenodd" d="M245.118 0.929691C345.926 -0.541279 452.229 41.4212 479.781 156.72C508.138 275.383 445.157 398.087 357.145 469.732C274.74 536.812 169.861 539.189 93.6437 471.046C15.3692 401.064 -22.1144 277.572 14.6379 163.508C50.1094 53.4183 148.834 2.33466 245.118 0.929691Z"/>
+                                    </svg>
+                                </ColorWrapper>
+                            </div>
+                            <Image src={phone} layout='responsive'></Image>
+                        </div>
                     </Row>
                 </Container>
             </Section>

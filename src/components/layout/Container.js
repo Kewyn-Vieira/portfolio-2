@@ -8,11 +8,13 @@ let StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: ${({position}) => position}
 `
 
-export default function Container({children, padding})
+export default function Container({children, padding, position})
 {
     return (
-        <StyledDiv padding={padding}>{children}</StyledDiv>
+        <StyledDiv padding={padding} position={position}>{children}</StyledDiv>
     )
 }
