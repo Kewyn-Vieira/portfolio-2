@@ -11,7 +11,7 @@ export default styled.button`
     cursor: pointer;
     border-color: ${(props) => props.borderColor};
     background-color: ${(props) => props.backgroundColor};
-    color: ${(props) => props.color ? props.color : 'white'};
+    color: ${(props) => props.color ? props.color : props.theme.colors.textLight};
 
     padding: ${(props) => props.padding};
     border-radius: ${(props) => props.borderRadius};

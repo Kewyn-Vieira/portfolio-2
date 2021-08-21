@@ -8,7 +8,7 @@ export default function ButtonPrimary(props)
             width={props.width}
             margin={props.margin}
             borderColor={({theme}) => props.borderColor ? props.borderColor : theme.colors.primary}
-            color={props.color ? props.color : 'white'} 
+            color={props.color} 
             backgroundColor={({theme}) => props.backgroundColor ? props.backgroundColor : theme.colors.primary}
             padding='15px 25px'
             borderRadius='5px'
