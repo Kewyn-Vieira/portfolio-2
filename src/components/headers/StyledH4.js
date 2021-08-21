@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default styled.h5`
+export default styled.h4`
     color: ${(props) => props.color ? props.color : props.theme.colors.textPrimary};
     font-weight: ${({fontWeight}) => fontWeight};
     text-align: ${({textAlign}) => textAlign ? textAlign : 'center'};

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export default styled.h1`
-    color: ${({theme}) => theme.colors.textPrimary};
-    text-align: center;
+    color: ${(props) => props.color ? props.color : props.theme.colors.textPrimary};
+    font-weight: ${({fontWeight}) => fontWeight ? fontWeight : '800'};
+    text-align: ${({textAlign}) => textAlign ? textAlign : 'center'};
     margin: ${(props) => props.margin};
     font-size: ${(props) => props.fontSize};
-    font-weight: 800px
 `
