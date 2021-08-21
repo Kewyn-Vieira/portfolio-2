@@ -3,16 +3,16 @@ import styled from 'styled-components'
 let StyledDiv = styled.div`
     width: 80%;
     max-width: 1080px;
-    padding: 64px 0;
+    padding: ${({padding}) => padding ? padding : '64px 0'};
 
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
-export default function Container(props)
+export default function Container({children, padding})
 {
     return (
-        <StyledDiv>{props.children}</StyledDiv>
+        <StyledDiv padding={padding}>{children}</StyledDiv>
     )
 }
