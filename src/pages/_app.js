@@ -10,7 +10,8 @@ const theme = {
     muted: '#BDBDBD',
     disabledElement: '#23A6F0',
     alert: '#E77C40',
-    textLight: '#FFFFFF'
+    textLight: '#FFFFFF',
+    backgroundLight: '#FFFFFF'
   },
 }
 

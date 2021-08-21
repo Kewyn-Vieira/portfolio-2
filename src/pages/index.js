@@ -106,7 +106,7 @@ function News(props)
 {
     return(
         <StyledNews>
-            <Column height='calc(100% - 40px)' color='white' alignItems='flex-start' justifyContent='flex-end' position='relative' padding='10px 20px'>
+            <Column height='calc(100% - 40px)' color={({theme}) => theme.colors.textLight} alignItems='flex-start' justifyContent='flex-end' position='relative' padding='10px 20px'>
                 <div style={{position: 'absolute', top:'0', left:'0', zIndex: '-1', filter: 'brightness(0.6)'}}>
                     <Image src={props.src} layout='fixed' width='331' height='452'></Image>
                 </div>
@@ -269,7 +269,7 @@ export default function Home() {
                                 <ButtonPrimary margin='0 16px 0 0'>
                                     Get Quote Now
                                 </ButtonPrimary>
-                                <ButtonPrimary backgroundColor='white' color={({theme}) => theme.colors.primary}>
+                                <ButtonPrimary backgroundColor='transparent' color={({theme}) => theme.colors.primary}>
                                     Learn More
                                 </ButtonPrimary>
                             </div>
@@ -281,7 +281,7 @@ export default function Home() {
                     </Row>
                 </Container>
             </Section>
-            <Section backgroundColor='white'>
+            <Section backgroundColor={({theme}) => theme.colors.backgroundLight}>
                 <Container>
                     <TextBox>
                         <StyledH2 fontSize='40px'>Better Strategy With Quality Business</StyledH2>
