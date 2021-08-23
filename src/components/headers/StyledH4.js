@@ -6,4 +6,9 @@ export default styled.h4`
     text-align: ${({textAlign}) => textAlign ? textAlign : 'center'};
     margin: ${({margin}) => margin};
     font-size: ${({fontSize}) => fontSize};
+
+    @media(max-width: 608px)
+    {
+        text-align: ${({wrapTextAlign}) => wrapTextAlign}
+    }
 `

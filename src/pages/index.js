@@ -40,6 +40,11 @@ let StyledP = styled.p`
     font-size: ${({fontSize}) => fontSize ? fontSize : '14px'};
     font-weight: ${({fontWeight}) => fontWeight};
     color: ${({color}) => color};
+
+    @media(max-width: 608px)
+    {
+        text-align: ${({wrapTextAlign}) => wrapTextAlign}
+    }
 `
 
 let APrimary = styled.a`
@@ -100,8 +105,8 @@ function Review(props)
 }
 
 let StyledNews = styled.div`
-    width: 331px;
-    height: 452px;
+    width: 256px;
+    height: 350px;
     margin-bottom: 32px;
 `
 
@@ -111,7 +116,7 @@ function News(props)
         <StyledNews>
             <Column height='calc(100% - 40px)' color={({theme}) => theme.colors.textLight} alignItems='flex-start' justifyContent='flex-end' position='relative' padding='10px 20px'>
                 <div style={{position: 'absolute', top:'0', left:'0', zIndex: '-1', filter: 'brightness(0.6)'}}>
-                    <Image src={props.src} layout='fixed' width='331' height='452'></Image>
+                    <Image src={props.src} layout='fixed' width='256' height='350'></Image>
                 </div>
                 <StyledP textAlign='left'>Tax Management</StyledP>
                 <StyledH4 color='inherit' textAlign='left' fontSize='20px' fontWeight='500'>Life Tips From Top Ten Adventure Travelers</StyledH4>
@@ -272,44 +277,46 @@ export default function Home() {
             </header>
             <Section>
                 <Container position='relative'>
-                    <div style={{overflow: 'hidden', position: 'absolute', top: '-10%', left: '-256px', transform:'rotate(128.37deg)'}}>
+                    <div style={{overflow: 'hidden', position: 'absolute', top: '-10%', left: '-256px'}}>
                         <ColorWrapper color={({theme}) => theme.colors.disabledElement}>
-                            <svg width="246" height="282" viewBox="0 0 246 282" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M156.475 0.486519C198.807 2.91727 234.975 29.0799 242.967 79.134C252.164 136.734 238.879 204.548 195.185 242.915C145.227 286.782 81.6478 296.653 41.2262 256.278C-1.11394 213.987 -12.5897 134.793 18.3005 66.2331C45.2585 6.40079 105.562 -2.43705 156.475 0.486519Z" fill="currentColor"/>
+                            <svg width="262" height="283" viewBox="0 0 262 283" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M214.679 250.654C186.497 282.333 143.534 294.45 99.3297 269.645C48.4615 241.102 3.54034 188.591 0.582652 130.519C-2.79907 64.1208 28.9275 8.14569 85.6735 1.51678C145.113 -5.42677 214.326 34.7346 248.903 101.511C279.079 159.786 248.575 212.551 214.679 250.654Z"/>
                             </svg>
                         </ColorWrapper>
                     </div>
-                    <Row justifyContent='space-between'>
-                        <Column width='50%' alignItems='flex-start'>
-                            <TextBox width='100%'>
-                                <StyledH1 textAlign='left' fontSize='58px' color={({theme}) => theme.colors.textDark}>Your Financial Assistance</StyledH1>
-                                <StyledP textAlign='left' fontSize='20px'>We know how large objects will act, but things on a small scale.</StyledP>
+                    <Row justifyContent='center'>
+                        <Column width='50%' minWidth='256px' alignItems='flex-start' margin='0 0 32px 0'>
+                            <TextBox width='92%'>
+                                <StyledH1 textAlign='left' wrapTextAlign='center' fontSize='6.8vw' color={({theme}) => theme.colors.textDark}>Your Financial Assistance</StyledH1>
+                                <StyledP textAlign='left' wrapTextAlign='center' fontSize='20px'>We know how large objects will act, but things on a small scale.</StyledP>
                             </TextBox>
-                            <div>
-                                <ButtonPrimary margin='0 16px 0 0'>
+                            <Row justifyContent='center'>
+                                <ButtonPrimary margin='0 8px 16px 8px'>
                                     Get Quote Now
                                 </ButtonPrimary>
-                                <ButtonPrimary backgroundColor='transparent' color={({theme}) => theme.colors.primary}>
+                                <ButtonPrimary margin='0 8px 16px 8px' backgroundColor='transparent' color={({theme}) => theme.colors.primary}>
                                     Learn More
                                 </ButtonPrimary>
-                            </div>
+                            </Row>
                         </Column>
-                        <div style={{width: '50%'}}>
-                            <div style={{width: 'inherit', overflow: 'hidden', position: 'absolute', top: '20%', transform: 'rotate(12.49deg)'}}>
+                        <div style={{width: '50%', minWidth:'256px', position: 'relative'}}>
+                            <div style={{width: '92%', position: 'absolute', top: '10%', right: '0'}}>
                                 <ColorWrapper color={({theme}) => theme.colors.primary}>
-                                    <svg width="100%" height="auto" viewBox="0 0 508 498" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M245.511 0.232318C350.833 -1.17472 463.858 38.9641 497.86 149.252C532.855 262.758 472.546 380.13 383.765 448.66C300.64 512.825 191.103 515.1 108.351 449.918C23.3647 382.977 -21.3897 264.852 11.8897 155.745C44.0092 50.4398 144.916 1.57623 245.511 0.232318Z"/>
+                                    <svg width="100%" height="auto" viewBox="0 0 511 498" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M295.508 7.18213C398.642 28.5793 500.316 92.2052 509.669 207.237C519.296 325.624 435.037 427.18 333.539 474.895C238.508 519.57 131.07 498.109 64.3673 416.577C-4.13567 332.845 -22.2924 207.838 33.7893 108.506C87.9166 12.6364 197.001 -13.2549 295.508 7.18213Z"/>
                                     </svg>
                                 </ColorWrapper>
                             </div>
-                            <div style={{width: 'inherit', overflow: 'hidden', position: 'absolute', top: '20%', transform:'rotate(64.17deg)'}}>
+                            <div style={{width: '92%', position: 'absolute', top: '10%', right: '0'}}>
                                 <ColorWrapper color={({theme}) => theme.colors.disabledElement}>
-                                    <svg width="100%" height="auto" viewBox="0 0 487 522" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity="0.35" fill-rule="evenodd" clip-rule="evenodd" d="M245.118 0.929691C345.926 -0.541279 452.229 41.4212 479.781 156.72C508.138 275.383 445.157 398.087 357.145 469.732C274.74 536.812 169.861 539.189 93.6437 471.046C15.3692 401.064 -22.1144 277.572 14.6379 163.508C50.1094 53.4183 148.834 2.33466 245.118 0.929691Z"/>
+                                    <svg width="100%" height="auto" viewBox="0 0 531 479" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.35" fill-rule="evenodd" clip-rule="evenodd" d="M497.711 139.094C542.952 229.192 551.492 343.158 459.712 418.188C365.255 495.408 227.37 492.174 124.539 444.165C28.2597 399.214 -19.5713 305.847 8.5614 207.556C37.4535 106.612 132.28 19.0731 250.963 2.46222C365.509 -13.5698 454.5 53.0392 497.711 139.094Z" fill="#8EC2F2"/>
                                     </svg>
                                 </ColorWrapper>
                             </div>
-                            <Image src={phone} layout='responsive'></Image>
+                            <div style={{width:'92%', float: 'right'}}>
+                                <Image src={phone} layout='responsive'></Image>
+                            </div>
                         </div>
                     </Row>
                 </Container>
@@ -374,7 +381,7 @@ export default function Home() {
                 </Container>
             </Section>
             <Section>
-                <Column>
+                <Column width='100%'>
                     <TextBox>
                         <StyledH2>Latest News</StyledH2>
                         <StyledP>Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </StyledP>
@@ -417,8 +424,8 @@ export default function Home() {
             <footer>
                 <Section>
                     <Container padding='32px 0'>
-                        <Row justifyContent='flex-start'>
-                            <Column alignItems='flex-start' margin='0 32px 0 0'>
+                        <Row justifyContent='space-between'>
+                            <Column alignItems='flex-start'>
                                 <StyledH3>Get In Touch</StyledH3>
                                 <StyledP width='210px' textAlign='left'>the quick fox jumps over the lazy dog</StyledP>
                                 <Row width='40%' justifyContent='space-between' flexWrap='nowrap'>
@@ -445,14 +452,14 @@ export default function Home() {
                                     </a>
                                 </Row>
                             </Column>
-                            <Column alignItems='flex-start' margin='0 32px 0 0'>
+                            <Column alignItems='flex-start'>
                                 <StyledH3>Company Info</StyledH3>
                                 <ASecondary>About Us</ASecondary>
                                 <ASecondary>Carrier</ASecondary>
                                 <ASecondary>We Are Hiring</ASecondary>
                                 <ASecondary>Blog</ASecondary>
                             </Column>
-                            <Column alignItems='flex-start' margin='0 32px 0 0'>
+                            <Column alignItems='flex-start'>
                                 <StyledH3>Features</StyledH3>
                                 <ASecondary>Business Marketing</ASecondary>
                                 <ASecondary>User Analytic</ASecondary>
