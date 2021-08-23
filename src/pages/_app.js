@@ -1,11 +1,12 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-const theme = {
+export const theme = {
   colors: {
     primary: '#23A6F0',
     textPrimary: '#252B42',
     textSecondary: '#737373',
     lightGray1: '#FAFAFA',
+    lightGray2: '#F6F6F6',
     success: '#2DC071',
     muted: '#BDBDBD',
     disabledElement: '#23A6F0',

@@ -7,9 +7,10 @@ let StyledDiv = styled.div`
     flex-wrap: ${({flexWrap}) => flexWrap ? flexWrap : 'wrap'};
     justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'space-evenly'};
     align-items: ${({alignItems}) => alignItems ? alignItems : 'space-evenly'};
+    float: ${({float}) => float};
 `
 
-export default function Row({children, width, justifyContent, alignItems, height, flexWrap})
+export default function Row({children, width, justifyContent, alignItems, height, flexWrap, float})
 {
     return (
         <StyledDiv 
@@ -17,7 +18,8 @@ export default function Row({children, width, justifyContent, alignItems, height
         height={height} 
         justifyContent={justifyContent} 
         alignItems={alignItems}
-        flexWrap={flexWrap}>
+        flexWrap={flexWrap}
+        float={float}>
             {children}
         </StyledDiv>
     )
