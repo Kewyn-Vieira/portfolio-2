@@ -512,9 +512,9 @@ export default function Home() {
             <Section backgroundColor={({theme}) => theme.colors.backgroundDark}>
                 <Container padding='32px 0'>
                     <Row>
-                        <TextBox color={({theme}) => theme.colors.textLight}>
-                            <StyledH2 color={({theme}) => theme.colors.textLight} textAlign='left'>Get In Touch</StyledH2>
-                            <StyledP textAlign='left' width='256px'>The gradual accumulation of information about atomic and small-scale behaviour during the first quarter of the 20th </StyledP>
+                        <TextBox color={({theme}) => theme.colors.textLight} width='256px'>
+                            <StyledH2 color={({theme}) => theme.colors.textLight} textAlign='left' wrapTextAlign='center'>Get In Touch</StyledH2>
+                            <StyledP textAlign='left' wrapTextAlign='center'>The gradual accumulation of information about atomic and small-scale behaviour during the first quarter of the 20th </StyledP>
                         </TextBox>
                         <div style={{height: '58px', margin: 'auto'}}>
                             <StyledInput placeholder='Your Email'></StyledInput>
