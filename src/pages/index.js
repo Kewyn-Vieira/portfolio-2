@@ -37,21 +37,50 @@ let MenuMobile = styled.div`
     }
 `
 
-let toggleMenu = (state = false) =>
+let openMenu = () =>
 {
     let header = document.getElementsByTagName('header')[0]
     let DeployableMenu = document.getElementsByClassName('deployable-menu')[0]
+
+    DeployableMenu.style.display = 'flex'
+    header.style.backgroundColor = theme.colors.lightGray2
+}
+
+let closeMenu = () => 
+{
+    let header = document.getElementsByTagName('header')[0]
+    let DeployableMenu = document.getElementsByClassName('deployable-menu')[0]
+
+    DeployableMenu.style.display = 'none'
+    header.style.backgroundColor = theme.colors.lightGray1
+}
+
+let toggleMenu = (state = false) =>
+{
+    let DeployableMenu = document.getElementsByClassName('deployable-menu')[0]
     let display = DeployableMenu.style.display
 
-    if(display === '' || display === 'none' || state === 'open')
+    if(state === 'close')
     {
-        DeployableMenu.style.display = 'flex'
-        header.style.backgroundColor = theme.colors.lightGray2
+        closeMenu()
+        return;
     }
-    else if(display === 'flex' || state === 'close')
+
+    if(state === 'open')
     {
-        DeployableMenu.style.display = 'none'
-        header.style.backgroundColor = theme.colors.lightGray1
+        openMenu()
+        return;
+    }
+
+    if(display === '' || display === 'none')
+    {
+        openMenu()
+        return;
+    }
+
+    else if(display === 'flex')
+    {
+        closeMenu()
     }
 }
 
