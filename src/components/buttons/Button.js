@@ -11,7 +11,7 @@ export default styled.button`
     cursor: pointer;
     border-color: ${({borderColor}) => borderColor};
     background-color: ${({backgroundColor}) => backgroundColor};
-    color: ${({color, theme}) => color ? color : theme.colors.textLight};
+    color: ${({eColor, theme}) => eColor ? eColor : theme.colors.textLight};
 
     padding: ${({padding}) => padding};
     border-radius: ${({borderRadius}) => borderRadius};

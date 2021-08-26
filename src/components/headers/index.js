@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
 
 let style = (props) => css`
-    color: ${({color, theme}) => color ? color : theme.colors.textPrimary};
+    color: ${({eColor, theme}) => eColor ? eColor : theme.colors.textPrimary};
     font-weight: ${({fontWeight}) => fontWeight ? fontWeight : '800'};
     text-align: ${({textAlign}) => textAlign ? textAlign : 'center'};
     margin: ${({margin}) => margin};

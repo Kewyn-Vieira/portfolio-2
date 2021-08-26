@@ -11,10 +11,10 @@ let StyledDiv = styled.div`
     align-items: ${({alignItems}) => alignItems ? alignItems : 'center'};
     justify-content: ${({justifyContent}) => justifyContent};
     position: ${({position}) => position};
-    color: ${({color}) => color}
+    color: ${({eColor}) => eColor}
 `
 
-export default function Column({children, width, minWidth, height, alignItems, justifyContent, margin, padding, position, color})
+export default function Column({children, width, minWidth, height, alignItems, justifyContent, margin, padding, position, eColor})
 {
     return (
         <StyledDiv 
@@ -25,7 +25,7 @@ export default function Column({children, width, minWidth, height, alignItems, j
         justifyContent={justifyContent}
         margin={margin}
         padding={padding}
-        color={color}
+        eColor={eColor}
         position={position}>
             {children}
         </StyledDiv>
