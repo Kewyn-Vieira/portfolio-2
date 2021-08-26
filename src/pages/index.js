@@ -225,12 +225,12 @@ let StyledPlan = styled.div`
         top: -45px;
         right: 22.5px;
 
-        eColor: ${({theme}) => theme.colors.textLight};
+        color: ${({theme}) => theme.colors.textLight};
         font-size: 24px;
         font-weight: 700;
 
         border-radius: 50%;
-        background-eColor: ${({theme}) => theme.colors.alert}
+        background-color: ${({theme}) => theme.colors.alert}
     }
 `
 
