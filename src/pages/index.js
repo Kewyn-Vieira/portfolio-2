@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useEffect } from 'react'
 import {theme} from './_app'
 import Image from 'next/image'
 import Button from '../components/buttons/Button'
@@ -36,18 +37,18 @@ let MenuMobile = styled.div`
     }
 `
 
-let toggleMenu = () =>
+let toggleMenu = (state = false) =>
 {
     let header = document.getElementsByTagName('header')[0]
     let DeployableMenu = document.getElementsByClassName('deployable-menu')[0]
     let display = DeployableMenu.style.display
 
-    if(display === '' || display === 'none')
+    if(display === '' || display === 'none' || state === 'open')
     {
         DeployableMenu.style.display = 'flex'
         header.style.backgroundColor = theme.colors.lightGray2
     }
-    else if(display === 'flex')
+    else if(display === 'flex' || state === 'close')
     {
         DeployableMenu.style.display = 'none'
         header.style.backgroundColor = theme.colors.lightGray1
@@ -304,6 +305,14 @@ let StyledInput = styled.input`
 `
 
 export default function Home() {
+    useEffect(() =>
+    {
+        window.addEventListener('resize', () =>
+        {
+            toggleMenu('close')
+        })
+    })
+
     return (
         <div>
             <header style={{marginBottom: '64px'}}>
